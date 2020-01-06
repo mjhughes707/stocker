@@ -3,7 +3,9 @@ import React from "react";
 const Header = () => {
   return (
     <header>
-      <h1 className="title">stocker</h1>
+      <h1>
+        <i className="fas fa-comments-dollar"></i> stocker
+      </h1>
     </header>
   );
 };
