@@ -1,0 +1,41 @@
+/***** FULL PAGE *****/
+/*********************/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/***** BODY *****/
+/****************/
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background-color: whitesmoke;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  margin-bottom: 60px;
+}
+
+/***** HEADER *****/
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(121, 161, 233);
+  height: 100%;
+}
