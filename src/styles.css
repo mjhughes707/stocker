@@ -22,20 +22,53 @@ body {
 
 .container {
   display: flex;
+  align-items: center;
+  margin: auto;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  margin-bottom: 60px;
+  width: 80%;
+  padding-top: 2rem;
 }
 
 /***** HEADER *****/
 
 header {
   display: flex;
-  align-items: center;
   justify-content: center;
   background: rgb(100, 193, 100);
   height: 100%;
+}
+
+/***** REQUEST *****/
+
+.request-header {
+  font-weight: normal;
+  text-align: center;
+}
+
+.request-form {
+  width: 100%;
+  text-align: center;
+}
+
+.request-field {
+  width: 80%;
+  padding: 0.8rem;
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+small {
+  display: block;
+  margin-top: 0.6rem;
+  color: rgb(162, 161, 161);
+  font-size: 0.8rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .request-field {
+    width: 50%;
+  }
 }
