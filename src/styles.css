@@ -66,6 +66,24 @@ small {
   font-size: 0.8rem;
 }
 
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: rgb(100, 193, 100);
+  padding: 0.4rem 1.3rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn:hover {
+  background: rgb(126, 210, 126);
+  border: 1px solid black;
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .request-field {
