@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 
 const Request = () => {
   const [symbols, setSymbols] = useState("");
+  const [tweets, setTweets] = useState([]);
 
   const handleChange = e => setSymbols(e.target.value);
 
@@ -12,11 +13,22 @@ const Request = () => {
         `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json`
       );
       const responseJSON = await response.json();
-      console.log(responseJSON);
+      setTweets(responseJSON.messages);
+      console.log(tweets);
     } catch (err) {
       console.log(err);
     }
   };
+
+  const tweetsList = tweets.map(tweet => {
+    return (
+      <div key={tweet.id} className="tweet-container">
+        <h4 className="tweet-name">{tweet.user.name}</h4>
+        <h5 className="tweet-username">@{tweet.user.username}</h5>
+        <p className="tweet-body">{tweet.body}</p>
+      </div>
+    );
+  });
 
   return (
     <Fragment>
@@ -37,6 +49,7 @@ const Request = () => {
         </small>
         <input type="submit" className="btn" />
       </form>
+      <div>{tweetsList}</div>
     </Fragment>
   );
 };
