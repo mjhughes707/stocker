@@ -84,6 +84,13 @@ small {
   background: rgb(126, 210, 126);
 }
 
+/***** SECTION *****/
+
+.section-title,
+.section-intro {
+  text-align: center;
+}
+
 /***** TWEETS *****/
 
 .tweet-container {

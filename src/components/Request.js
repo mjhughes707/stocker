@@ -50,8 +50,15 @@ const Request = () => {
         </small>
         <input type="submit" className="btn" />
       </form>
-      <h2>{title}</h2>
-      <div>{tweetsList}</div>
+      <section>
+        <h2 className="section-title">{title}</h2>
+        <p className="section-intro">
+          {tweets.length > 0
+            ? `The ${tweets.length} most recent tweets`
+            : "No tweets found"}
+        </p>
+        {tweetsList}
+      </section>
     </Fragment>
   );
 };
