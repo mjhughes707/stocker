@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 
 const Request = () => {
   const [symbols, setSymbols] = useState("");
+  const [title, setTitle] = useState("");
   const [tweets, setTweets] = useState([]);
 
   const handleChange = e => setSymbols(e.target.value);
@@ -13,8 +14,8 @@ const Request = () => {
         `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json`
       );
       const responseJSON = await response.json();
+      setTitle(responseJSON.symbol.title);
       setTweets(responseJSON.messages);
-      console.log(tweets);
     } catch (err) {
       console.log(err);
     }
@@ -49,6 +50,7 @@ const Request = () => {
         </small>
         <input type="submit" className="btn" />
       </form>
+      <h2>{title}</h2>
       <div>{tweetsList}</div>
     </Fragment>
   );
