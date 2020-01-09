@@ -38,20 +38,20 @@ header {
   height: 100%;
 }
 
-/***** REQUEST *****/
+/***** FORM *****/
 
-.request-header {
+.form-header {
   font-weight: normal;
   text-align: center;
 }
 
-.request-form {
+.form-form {
   width: 100%;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.request-field {
+.form-field {
   width: 80%;
   padding: 0.8rem;
   font-size: 1.25rem;
@@ -132,7 +132,7 @@ section {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .request-field {
+  .form-field {
     width: 50%;
   }
 
