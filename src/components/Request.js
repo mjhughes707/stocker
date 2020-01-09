@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import axios from "axios";
 
 const Request = () => {
   const [symbols, setSymbols] = useState("");
@@ -7,16 +8,22 @@ const Request = () => {
 
   const handleChange = e => setSymbols(e.target.value);
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault();
+    getTweets();
+  };
+
+  const getTweets = async e => {
     try {
-      const response = await fetch(
-        `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json`
+      const res = await axios.get(
+        `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json?limit=10`
       );
-      const responseJSON = await response.json();
-      setTitle(responseJSON.symbol.title);
-      setTweets(responseJSON.messages);
+      setTitle(res.data.symbol.title);
+      setTweets(res.data.messages);
     } catch (err) {
+      alert(
+        `"${symbols.toUpperCase()}" not found. Please enter a valid stock symbol.`
+      );
       console.log(err);
     }
   };
@@ -45,9 +52,7 @@ const Request = () => {
           onChange={e => handleChange(e)}
           required
         />
-        <small>
-          If multiple, please separate by a comma (e.g. AAPL, MSFT, TSLA)
-        </small>
+        <small>If multiple, please separate by a comma (e.g. A, B, C, D)</small>
         <input type="submit" className="btn" />
       </form>
       <section>
