@@ -31,9 +31,7 @@ const Form = ({ getTweets }) => {
           <small>e.g. AAPL, GOOG, MSFT, TSLA</small>
         </div>
         <div>
-          <h4 className="form-header">
-            Please enter number of tweets to display
-          </h4>
+          <h4 className="form-header">Please enter # of tweets to display</h4>
           <input
             className="num-form-field"
             type="text"

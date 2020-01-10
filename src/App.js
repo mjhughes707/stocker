@@ -33,6 +33,20 @@ function App() {
     setTweets(newTweets);
   };
 
+  // @todo - attempting to set up an automatic refresh
+
+  // useEffect((symbols, numTweets) => {
+  //   const interval = setInterval(tweets => {
+  //     if (tweets === undefined) {
+  //       console.log("Stopped");
+  //       console.log(tweets);
+  //       return;
+  //     }
+  //     getTweets(symbols, numTweets);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // });
+
   return (
     <Fragment>
       <Header />
@@ -42,9 +56,7 @@ function App() {
           <section key={index}>
             <h2 className="section-title">{obj.title}</h2>
             <p className="section-intro">
-              {tweets.length > 0
-                ? `Displaying the ${obj.tweets.length} most recent tweets`
-                : "No tweets found"}
+              {`Displaying the ${obj.tweets.length} most recent tweets`}
             </p>
             <input
               type="submit"
