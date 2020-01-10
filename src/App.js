@@ -15,7 +15,6 @@ function App() {
         {
           headers: {
             "Content-Type": "application/json",
-            "X-Content-Type-Options": "nosniff",
           },
         },
         { crossdomain: true }
