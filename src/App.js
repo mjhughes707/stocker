@@ -12,6 +12,12 @@ function App() {
     try {
       const res = await axios.get(
         `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json?limit=${numTweets}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "X-Content-Type-Options": "nosniff",
+          },
+        },
         { crossdomain: true }
       );
       addTweets(res.data.symbol.title, res.data.messages);
