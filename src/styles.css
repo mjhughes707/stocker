@@ -88,6 +88,7 @@ small {
 
 section {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .section-title,
@@ -95,11 +96,37 @@ section {
   text-align: center;
 }
 
+.section-title {
+  margin-bottom: 0;
+}
+
+.section-intro {
+  margin: 0.5rem 0 0.6rem;
+}
+
+.remove-btn {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  background: rgb(232, 232, 232);
+  padding: 0.25rem 0.9rem;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.remove-btn:hover {
+  background: rgb(247, 182, 170);
+}
+
 /***** TWEETS *****/
 
 .tweet-container {
   padding: 1.5rem 1rem;
   margin: auto;
+  text-align: left;
   width: 60%;
   border-top: 1px solid black;
   word-wrap: break-word;
