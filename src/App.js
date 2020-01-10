@@ -8,10 +8,10 @@ import "./styles.css";
 function App() {
   const [tweets, setTweets] = useState([]);
 
-  const getTweets = async symbols => {
+  const getTweets = async (symbols, numTweets) => {
     try {
       const res = await axios.get(
-        `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json?limit=3`
+        `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json?limit=${numTweets}`
       );
       addTweets(res.data.symbol.title, res.data.messages);
     } catch (err) {
@@ -43,7 +43,7 @@ function App() {
             <h2 className="section-title">{obj.title}</h2>
             <p className="section-intro">
               {tweets.length > 0
-                ? `The ${obj.tweets.length} most recent tweets`
+                ? `Displaying the ${obj.tweets.length} most recent tweets`
                 : "No tweets found"}
             </p>
             <input
