@@ -11,13 +11,7 @@ function App() {
   const getTweets = async (symbols, numTweets) => {
     try {
       const res = await axios.get(
-        `https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json?limit=${numTweets}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-        { crossdomain: true }
+        `https://crossorigin.me/https://api.stocktwits.com/api/2/streams/symbol/${symbols}.json?limit=${numTweets}`
       );
       addTweets(res.data.symbol.title, res.data.messages);
     } catch (err) {
